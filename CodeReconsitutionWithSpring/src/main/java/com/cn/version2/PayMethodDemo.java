@@ -18,6 +18,7 @@ public class PayMethodDemo {
     public static void main(String[] args) {
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(PayMethodDemo.class);
+        //ApplicationContext applicationContext = new AnnotationConfigApplicationContext(PayMethodDemo.class);
 
         PayContext payContext = new PayContext();
         payContext.setCents(100000);

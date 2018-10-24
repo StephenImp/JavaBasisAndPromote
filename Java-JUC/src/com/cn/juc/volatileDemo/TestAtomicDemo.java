@@ -47,11 +47,11 @@ public class TestAtomicDemo {
 
 class AtomicDemo implements Runnable{
 
-//	private  int serialNumber = 0;  此时会有线程安全问题(原子性问题)
-	
+	private  int serialNumber = 0;  //此时会有线程安全问题(原子性问题)
+
 //	private volatile int serialNumber = 0;// volatile 并不能解决
-	
-	private AtomicInteger serialNumber = new AtomicInteger(0);//解决原子性问题
+
+	//private AtomicInteger serialNumber = new AtomicInteger(0);//解决原子性问题
 
 
 	@Override
@@ -66,7 +66,8 @@ class AtomicDemo implements Runnable{
 	}
 	
 	public int getSerialNumber(){
-		return serialNumber.getAndIncrement();
+		//return serialNumber.getAndIncrement();
+		return  serialNumber++;
 	}
 
 }
