@@ -26,6 +26,12 @@ import org.junit.Test;
  * 		boolean test(T t);
  * 
  */
+
+/**
+ * 方法实现
+ *
+ * 调用方法
+ */
 public class TestLambda3 {
 
 	//Predicate<T> 断言型接口：
@@ -90,6 +96,10 @@ public class TestLambda3 {
 	}
 	
 	//Consumer<T> 消费型接口 :
+
+	/**
+	 * 参数--->利用参数，接口中方法的具体实现
+	 */
 	@Test
 	public void test1(){
 		happy(10000, (m) -> System.out.println("你们刚哥喜欢大宝剑，每次消费：" + m + "元"));
