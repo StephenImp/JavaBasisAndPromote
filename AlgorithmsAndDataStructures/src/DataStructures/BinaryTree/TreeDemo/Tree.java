@@ -10,21 +10,26 @@ public class Tree {
 
     private Node root;//根节点
 
-    public Node find(int key) {
-        Node current = root;
-        while (current.iData != key) {
+    public Tree(){
+        root = null;
+    }
 
-            if (key < current.iData) {
+    public Node find(int key) {
+
+        Node current = root;//start at root
+
+        while (current.iData != key) {//while no match
+
+            if (key < current.iData) {//go left
                 current = current.leftChild;
             } else {
                 current = current.rightChild;
             }
 
-            if (current == null) {
+            if (current == null) {//didn't find it
                 return null;
             }
         }
-
         return current;
     }
 
@@ -39,8 +44,10 @@ public class Tree {
         } else {
             Node current = root;
             Node parent;
+
             while (true) {
-                parent = current.leftChild;
+
+                parent = current;//当前节点为父节点
 
                 if (id < current.iData) {   //go left
                     current = current.leftChild;
@@ -59,9 +66,98 @@ public class Tree {
         }
     }
 
-    public void delete() {
+    /**
+     * 删除节点：
+     * 首先，要查找要删除的节点，并且要保存要删除节点的父节点，这样就可以修改它的子节点的值了
+     * 如果找到节点，就从while循环中跳出，parent保存要删除的节点
+     * 如果找不到要删除的节点，就从delete()方法返回false
+     */
 
+    public boolean delete(int key) {
+        Node current = root;
+        Node parent = root;
+
+        boolean isLeftChild = true;//current节点（要删除的节点）是否为左节点
+
+        /**
+         * 找到要删除的节点，并保存它的父节点，
+         * 并且记录要删除的节点是左节点还是右节点。
+         */
+        while (current.iData != key) {
+
+            parent = current;//这里保存要删除的节点的父节点
+
+            if (key < current.iData) {
+                isLeftChild = true;
+                current = current.leftChild;
+            } else {
+                isLeftChild = false;
+                current = current.rightChild;
+            }
+
+            if (current == null) {
+                return false;
+            }
+        }
+
+        if (current.leftChild == null && current.rightChild == null) {//删除没有子节点的节点
+            if (current == root) {
+                root = null;
+            } else if (isLeftChild) {
+                parent.leftChild = null;
+            } else {
+                parent.rightChild = null;
+            }
+        } else if (current.rightChild == null) {//删除有一个子节点的节点(删除节点有左节点)
+            /**
+             * 要删除的节点的子节点为左节点时
+             * 删除节点后，把删除节点的子节点拼接上来
+             */
+            if (current == root) {
+                root = current.leftChild;
+            } else if (isLeftChild) {
+                parent.leftChild = current.leftChild;
+            } else {
+                parent.rightChild = current.leftChild;
+            }
+
+        } else if (current.leftChild == null) {//删除有一个子节点的节点(删除节点有右节点)
+
+            /**
+             * 要删除的节点的子节点为右节点时
+             * 同理
+             */
+            if (current == root) {
+                root = current.rightChild;
+            } else if (isLeftChild) {
+                parent.leftChild = current.rightChild;
+            } else {
+                parent.rightChild = current.rightChild;
+            }
+        } else {
+            /**
+             * 删除的节点的子节点有两个节点的时候
+             */
+            Node successor = getSuccessor(current);//找到要删除节点的后继节点
+
+            if (current == root) {
+                root = successor;
+            } else if (isLeftChild) {
+                parent.leftChild = successor;
+            } else {
+                parent.rightChild = successor;
+
+                /**
+                 * 当要删除节点的为右节点时
+                 * 要删除节点的左节点为后继节点的左节点
+                 */
+                successor.leftChild = current.leftChild;
+            }
+        }
+        return true;
     }
+
+
 
     /**
      * 中序遍历
@@ -115,93 +211,6 @@ public class Tree {
         return last;
     }
 
-    /**
-     * 删除节点：
-     * 首先，要查找要删除的节点，并且要保存要删除节点的父节点，这样就可以修改它的子节点的值了
-     * 如果找到节点，就从while循环中跳出，parent保存要删除的节点
-     * 如果找不到要删除的节点，就从delete()方法返回false
-     */
-
-    public boolean delete(int key) {
-        Node current = root;
-        Node parent = root;
-
-        boolean isLeftChild = true;//current节点（要删除的节点）是否为左节点
-
-        while (current.iData != key) {
-
-            parent = current;//这里保存要删除的节点的父节点
-
-            if (key < current.iData) {
-                isLeftChild = true;
-                current = current.leftChild;
-            } else {
-                isLeftChild = false;
-                current = current.rightChild;
-            }
-
-            if (current == null) {
-                return false;
-            }
-        }
-
-        if (current.leftChild == null && current.rightChild == null) {//删除没有子节点的节点
-            if (current == root) {
-                root = null;
-            } else if (isLeftChild) {
-                parent.leftChild = null;
-            } else {
-                parent.rightChild = null;
-            }
-        } else if (current.rightChild == null) {//删除有一个子节点的节点
-            /**
-             * 要删除的节点的子节点为左节点时
-             * 删除节点后，把删除节点的子节点拼接上来
-             */
-            if (current == root) {
-                root = current.leftChild;
-            } else if (isLeftChild) {
-                parent.leftChild = current.leftChild;
-            } else {
-                parent.rightChild = current.leftChild;
-            }
-
-        } else if (current.leftChild == null) {//删除有一个子节点的节点
-
-            /**
-             * 要删除的节点的子节点为右节点时
-             * 同理
-             */
-            if (current == root) {
-                root = current.rightChild;
-            } else if (isLeftChild) {
-                parent.leftChild = current.rightChild;
-            } else {
-                parent.rightChild = current.rightChild;
-            }
-        } else {
-            /**
-             * 删除的节点的子节点有两个节点的时候
-             */
-            Node successor = getSuccessor(current);//找到要删除节点的后继节点
-
-            if (current == root) {
-                root = successor;
-            } else if (isLeftChild) {
-                parent.leftChild = successor;
-            } else {
-                parent.rightChild = successor;
-
-                /**
-                 * 当要删除节点的为右节点时
-                 * 要删除节点的左节点为后继节点的左节点
-                 */
-                successor.leftChild = current.leftChild;
-            }
-
-        }
-        return true;
-    }
 
     /**
      * 寻找后继节点
