@@ -15,7 +15,6 @@ public class TestFloat {
         Float total2 = new Float(94.0);
         Float total3 = new Float(96.0);
 
-
         double t =(total*0.3+total2*0.5+total3*0.2);
 
         BigDecimal bg = new BigDecimal(t);
