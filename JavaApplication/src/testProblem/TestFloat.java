@@ -11,6 +11,7 @@ public class TestFloat {
 
     public static void main(String[] args) {
 
+        //解决冲突
         Float total = new Float(93.0);
         Float total2 = new Float(94.0);
         Float total3 = new Float(96.0);
