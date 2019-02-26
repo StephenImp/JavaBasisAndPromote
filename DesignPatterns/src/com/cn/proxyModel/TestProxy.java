@@ -36,6 +36,8 @@ class MyInvocationHandler implements InvocationHandler {
 
 	/**
 	 * 通过反射获取被代理类的信息
+	 *
+	 * 通过代理类信息生成一个动态代理类的实例
 	 */
 	public Object blind(Object obj) {
 		this.obj = obj;
@@ -43,6 +45,14 @@ class MyInvocationHandler implements InvocationHandler {
 				.getClass().getInterfaces(), this);
 	}
 
+	/**
+	 * 所有执行代理对象的方法都会被替换成执行invoke方法。
+	 * @param proxy		代表动态代理对象
+	 * @param method	代表正在执行的方法
+	 * @param args		代表调用目标方法时传入的实参
+	 * @return
+	 * @throws Throwable
+	 */
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args)
 			throws Throwable {
@@ -71,8 +81,10 @@ public class TestProxy {
 		 * 获取被代理类的信息
 		 */
 		Object obj = handler.blind(real);
-		Object obj2 = handler.blind(real2);
 		Subject sub = (Subject)obj;
+
+
+		Object obj2 = handler.blind(real2);
 		Subject sub2 = (Subject)obj2;
 
 		/**

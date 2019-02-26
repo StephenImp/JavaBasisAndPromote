@@ -11,6 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class TestABCAlternate {
 	
 	public static void main(String[] args) {
+
 		AlternateDemo ad = new AlternateDemo();
 		
 		new Thread(new Runnable() {

@@ -8,6 +8,7 @@ public class TestAdapter1 {
     public static void main(String[] args) {
 
         Target target = new Adapter();
+
         target.Request();
     }
 }
