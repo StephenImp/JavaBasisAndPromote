@@ -1,7 +1,9 @@
 package com.cn.gubao.base.testApple;
 
 import com.cn.gubao.base.application.FilterApples;
+import com.cn.gubao.base.entity.Apple;
 import com.cn.gubao.base.interfaceFilter.IAppleFilter;
+import com.cn.gubao.base.interfaceFilter.impl.AppleFilterByWeightColor;
 import com.cn.gubao.base.interfaceFilter.impl.BananaFilterByWeight;
 import org.junit.Test;
 
@@ -16,12 +18,13 @@ public class TestAppleApplication {
      */
     @Test
     public void test5(){
-//        System.out.println(FilterApples.filterFruit(FilterApples.reposBanana, new IAppleFilter() {
-//            @Override
-//            public boolean obtainApple(Object o) {
-//                return false;
-//            }
-//        }));
+
+        System.out.println(FilterApples.filterFruit(FilterApples.reposBanana, new IAppleFilter() {
+            @Override
+            public boolean obtainApple(Object o) {
+                return false;
+            }
+        }));
 
         System.out.println( FilterApples.filterFruit(FilterApples.reposBanana,new BananaFilterByWeight()));
 
@@ -39,8 +42,8 @@ public class TestAppleApplication {
 //    }
 
 
-//    @Test
-//    public void test4(){
-//        System.out.println(FilterApples.filterApples(new AppleFilterByWeightColor()));
-//    }
+    @Test
+    public void test4(){
+        System.out.println(FilterApples.filterApples(new AppleFilterByWeightColor()));
+    }
 }

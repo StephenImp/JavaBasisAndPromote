@@ -16,10 +16,10 @@ public class ForeignCenter {
     }
 
     public void attack() {
-        System.out.println("外籍中锋"+name+"进攻");
+        System.out.println("国内中锋"+name+"进攻");
     }
 
     public void defense() {
-        System.out.println("外籍中锋"+name+"防守");
+        System.out.println("国内中锋"+name+"防守");
     }
 }

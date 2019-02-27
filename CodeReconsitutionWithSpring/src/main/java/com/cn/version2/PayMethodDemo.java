@@ -23,8 +23,6 @@ public class PayMethodDemo {
         PayContext payContext = new PayContext();
         payContext.setCents(100000);
 
-
-
         /**
          * 容器在加载WechatPayProcessor，AliPayProcessor和AbstractPayProcessor时，
          * 由于payChannelMap是静态属性，

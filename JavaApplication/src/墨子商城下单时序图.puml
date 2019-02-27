@@ -1,0 +1,36 @@
+@startuml
+participant 前端 as front
+participant 有赞商城 as yz
+participant 有赞云 as back
+participant 墨子结算系统 as mozi
+
+group 下单和结算
+activate front
+activate yz
+
+front -> front : 进入商品详情
+activate back
+front -> back : 请求店铺名称
+back --> front: 返回店铺名称
+
+front -> back : log访问记录
+back --> front: 成功
+
+activate mozi
+
+back -> mozi : 推送访问记录
+mozi -> mozi : 建立推荐关系
+mozi --> back: 成功
+
+front -> yz : 创建订单
+yz --> front: 成功
+yz -> back : 推送订单消息
+back -> mozi : 推送订单消息
+mozi -> mozi : 结算
+
+deactivate front
+deactivate back
+deactivate mozi
+end
+
+@enduml

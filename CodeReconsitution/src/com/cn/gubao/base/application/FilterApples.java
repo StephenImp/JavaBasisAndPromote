@@ -46,49 +46,50 @@ public class FilterApples {
     //版本④
     //抽象（标准接口）
     //问题（思考）：根据重量去判断，重量怎么能不写死？  策略模式？
-//    public static List<Apple> filterApples(IAppleFilter appleFilter) {
-//        List<Apple> result = new ArrayList<>();
-//        for (Apple app : repos) {
-//            if (appleFilter.obtainApple(app)) {
-//                result.add(app);
-//            }
-//        }
-//        return result;
-//    }
+    public static List<Apple> filterApples(IAppleFilter appleFilter) {
+
+        List<Apple> result = new ArrayList<>();
+        for (Apple app : repos) {
+            if (appleFilter.obtainApple(app)) {
+                result.add(app);
+            }
+        }
+        return result;
+    }
 
 
     //版本③
-//    private static List<Apple> filterAppleByWithColor(String clolr,int weight,boolean flag) {
-//        List<Apple> result = new ArrayList<>();
-//        for (Apple app : repos) {
-//            if (flag&&clolr.equals(app.getColor())||(!flag&&app.getWeight()>weight)) {
-//                result.add(app);
-//            }
-//        }
-//        return result;
-//    }
+    private static List<Apple> filterAppleByWithColor(String clolr,int weight,boolean flag) {
+        List<Apple> result = new ArrayList<>();
+        for (Apple app : repos) {
+            if (flag&&clolr.equals(app.getColor())||(!flag&&app.getWeight()>weight)) {
+                result.add(app);
+            }
+        }
+        return result;
+    }
 
     //版本②
-//    private static List<Apple> filterAppleByWithColor(String clolr) {
-//        List<Apple> result = new ArrayList<>();
-//        for (Apple app : repos) {
-//            if (clolr.equals(app.getColor())) {
-//                result.add(app);
-//            }
-//        }
-//        return result;
-//    }
+    private static List<Apple> filterAppleByWithColor(String clolr) {
+        List<Apple> result = new ArrayList<>();
+        for (Apple app : repos) {
+            if (clolr.equals(app.getColor())) {
+                result.add(app);
+            }
+        }
+        return result;
+    }
 
 
     //版本①
-//    private static List<Apple> filterGreenApple() {
-//        List<Apple> result = new ArrayList<>();
-//        for (Apple app : repos) {
-//            if ("green".equals(app.getColor())) {
-//                result.add(app);
-//            }
-//        }
-//        return result;
-//    }
+    private static List<Apple> filterGreenApple() {
+        List<Apple> result = new ArrayList<>();
+        for (Apple app : repos) {
+            if ("green".equals(app.getColor())) {
+                result.add(app);
+            }
+        }
+        return result;
+    }
 
 }
