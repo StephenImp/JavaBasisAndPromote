@@ -34,6 +34,9 @@ import org.junit.Test;
  */
 public class TestLambda3 {
 
+	/**
+	 * lambda体是boolean类型的。
+	 */
 	//Predicate<T> 断言型接口：
 	@Test
 	public void test4(){
@@ -57,10 +60,14 @@ public class TestLambda3 {
 		
 		return strList;
 	}
-	
+
+	/**
+	 * 函数式接口，定义入参，出参。
+	 */
 	//Function<T, R> 函数型接口：
 	@Test
 	public void test3(){
+
 		String newStr = strHandler("\t\t\t 我大尚硅谷威武   ", (str) -> str.trim());
 		System.out.println(newStr);
 		
@@ -74,6 +81,11 @@ public class TestLambda3 {
 	}
 	
 	//Supplier<T> 供给型接口 :
+
+	/**
+	 * 供给型接口
+	 * 传进去一个值，传出来一个值
+	 */
 	@Test
 	public void test2(){
 		List<Integer> numList = getNumList(10, () -> (int)(Math.random() * 100));
@@ -96,9 +108,10 @@ public class TestLambda3 {
 	}
 	
 	//Consumer<T> 消费型接口 :
-
 	/**
 	 * 参数--->利用参数，接口中方法的具体实现
+	 *
+	 * 传进去直接运行，不用返回的
 	 */
 	@Test
 	public void test1(){

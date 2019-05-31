@@ -54,8 +54,8 @@ public class TestStreamaAPI {
 	
 	//2. 中间操作
 	List<Employee> emps = Arrays.asList(
-			new Employee(102, "李四", 59, 6666.66),
 			new Employee(101, "张三", 18, 9999.99),
+			new Employee(102, "李四", 59, 6666.66),
 			new Employee(103, "王五", 28, 3333.33),
 			new Employee(104, "赵六", 8, 7777.77),
 			new Employee(104, "赵六", 8, 7777.77),
@@ -94,17 +94,24 @@ public class TestStreamaAPI {
 			System.out.println(it.next());
 		}
 	}
-	
+
+	/**
+	 * 根据id排序?
+	 */
 	@Test
 	public void test4(){
 		emps.stream()
 			.filter((e) -> {
 				System.out.println("短路！"); // &&  ||
 				return e.getSalary() >= 5000;
-			}).limit(3)
+			})
+			.limit(3)
 			.forEach(System.out::println);
 	}
-	
+
+	/**
+	 * 根据id排序?
+	 */
 	@Test
 	public void test5(){
 		emps.parallelStream()

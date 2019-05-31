@@ -56,6 +56,7 @@ public class TestMethodRef {
 	//构造器引用
 	@Test
 	public void test7(){
+
 		Function<String, Employee> fun = Employee::new;
 		Employee e = fun.apply("wpw");
 		System.out.println(e);
@@ -66,6 +67,7 @@ public class TestMethodRef {
 	
 	@Test
 	public void test6(){
+
 		Supplier<Employee> sup = () -> new Employee();
 		System.out.println(sup.get());
 		
@@ -103,10 +105,12 @@ public class TestMethodRef {
 	@Test
 	public void test4(){
 		Comparator<Integer> com = (x, y) -> Integer.compare(x, y);
+		com.compare(1,2);
 		
 		System.out.println("-------------------------------------");
 		
 		Comparator<Integer> com2 = Integer::compare;
+		com2.compare(1,2);
 	}
 
 	/**
