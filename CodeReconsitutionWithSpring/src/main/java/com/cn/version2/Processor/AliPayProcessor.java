@@ -3,12 +3,11 @@ package com.cn.version2.Processor;
 import com.cn.version2.FilterInterface.AbstractPayProcessor;
 import com.cn.version2.context.PayContext;
 import com.cn.version2.enumDemo.PayChannelEnum;
-import org.springframework.stereotype.Service;
 
 /**
  * Created by admin on 2018/8/14.
  */
-@Service
+//@Service
 public class AliPayProcessor extends AbstractPayProcessor {
 
     /**

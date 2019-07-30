@@ -1,14 +1,13 @@
 package com.cn.version2.FilterInterface;
 
 import com.cn.version2.context.PayContext;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 
 /**
  * Created by admin on 2018/8/14.
  */
-@Service
+//@Service
 public abstract class AbstractPayProcessor implements PayProcessor {
 
     /**

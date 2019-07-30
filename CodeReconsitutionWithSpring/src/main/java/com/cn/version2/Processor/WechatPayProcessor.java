@@ -3,12 +3,13 @@ package com.cn.version2.Processor;
 import com.cn.version2.FilterInterface.AbstractPayProcessor;
 import com.cn.version2.context.PayContext;
 import com.cn.version2.enumDemo.PayChannelEnum;
-import org.springframework.stereotype.Service;
 
 /**
  * Created by admin on 2018/8/14.
  */
-@Service
+//不知道什么原因，编译不通过，这注释掉，反正主要是看代码逻辑
+//这个当做它生效了
+//@Service
 public class WechatPayProcessor extends AbstractPayProcessor {
 
     @Override

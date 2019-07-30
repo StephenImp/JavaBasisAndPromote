@@ -3,21 +3,17 @@ package com.cn.version2;
 import com.cn.version2.FilterInterface.PayProcessor;
 import com.cn.version2.context.PayContext;
 import com.cn.version2.enumDemo.PayChannelEnum;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by admin on 2018/8/14.
  */
-@Configuration
-@ComponentScan("com.cn.version2")
+//@Configuration
+//@ComponentScan("com.cn.version2")
 public class PayMethodDemo {
 
     public static void main(String[] args) {
 
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(PayMethodDemo.class);
+        //ApplicationContext applicationContext = new AnnotationConfigApplicationContext(PayMethodDemo.class);
         //ApplicationContext applicationContext = new AnnotationConfigApplicationContext(PayMethodDemo.class);
 
         PayContext payContext = new PayContext();
