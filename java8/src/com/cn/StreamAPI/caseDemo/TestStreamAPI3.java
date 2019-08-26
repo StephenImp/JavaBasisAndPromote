@@ -1,4 +1,4 @@
-package com.cn.StreamAPI;
+package com.cn.StreamAPI.caseDemo;
 
 import java.util.Arrays;
 import java.util.DoubleSummaryStatistics;
@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
-import com.cn.StreamAPI.Employee.Status;
+
+import com.cn.StreamAPI.caseDemo.entity.Employee;
+import com.cn.StreamAPI.caseDemo.entity.Employee.Status;
 import org.junit.Test;
 
 /**
@@ -17,7 +19,7 @@ import org.junit.Test;
  *
  */
 public class TestStreamAPI3 {
-	
+
 	List<Employee> emps = Arrays.asList(
 			new Employee(102, "李四", 79, 6666.66, Status.BUSY),
 			new Employee(101, "张三", 18, 9999.99, Status.FREE),
@@ -27,7 +29,7 @@ public class TestStreamAPI3 {
 			new Employee(104, "赵六", 8, 7777.77, Status.FREE),
 			new Employee(105, "田七", 38, 5555.55, Status.BUSY)
 	);
-	
+
 	//3. 终止操作
 
 	/**
@@ -39,21 +41,21 @@ public class TestStreamAPI3 {
 	@Test
 	public void test1(){
 		List<Integer> list = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
-		
+
 		Integer sum = list.stream()
 			.reduce(0, (x, y) -> x + y);
-		
+
 		System.out.println(sum);
-		
+
 		System.out.println("----------------------------------------");
-		
+
 		Optional<Double> op = emps.stream()
 			.map(Employee::getSalary)
 			.reduce(Double::sum);
-		
+
 		System.out.println(op.get());
 	}
-	
+
 	//需求：搜索名字中 “六” 出现的次数
 	@Test
 	public void test2(){
@@ -63,10 +65,10 @@ public class TestStreamAPI3 {
 			.map((ch) -> {
 				if(ch.equals('六'))
 					return 1;
-				else 
+				else
 					return 0;
 			}).reduce(Integer::sum);
-		
+
 		System.out.println(sum.get());
 	}
 
@@ -82,9 +84,9 @@ public class TestStreamAPI3 {
 		List<String> list = emps.stream()
 			.map(Employee::getName)
 			.collect(Collectors.toList());
-		
+
 		list.forEach(System.out::println);
-		
+
 		System.out.println("----------------------------------");
 
 		/**
@@ -93,7 +95,7 @@ public class TestStreamAPI3 {
 		Set<String> set = emps.stream()
 			.map(Employee::getName)
 			.collect(Collectors.toSet());
-		
+
 		set.forEach(System.out::println);
 
 		System.out.println("----------------------------------");
@@ -104,10 +106,10 @@ public class TestStreamAPI3 {
 		HashSet<String> hs = emps.stream()
 			.map(Employee::getName)
 			.collect(Collectors.toCollection(HashSet::new));
-		
+
 		hs.forEach(System.out::println);
 	}
-	
+
 	@Test
 	public void test4(){
 		/**
@@ -116,7 +118,7 @@ public class TestStreamAPI3 {
 		Optional<Double> max = emps.stream()
 			.map(Employee::getSalary)
 			.collect(Collectors.maxBy(Double::compare));
-		
+
 		System.out.println(max.get());
 
 		/**
@@ -124,7 +126,7 @@ public class TestStreamAPI3 {
 		 */
 		Optional<Employee> op = emps.stream()
 			.collect(Collectors.minBy((e1, e2) -> Double.compare(e1.getSalary(), e2.getSalary())));
-		
+
 		System.out.println(op.get());
 
 		/**
@@ -132,7 +134,7 @@ public class TestStreamAPI3 {
 		 */
 		Double sum = emps.stream()
 			.collect(Collectors.summingDouble(Employee::getSalary));
-		
+
 		System.out.println(sum);
 
 		/**
@@ -140,7 +142,7 @@ public class TestStreamAPI3 {
 		 */
 		Double avg = emps.stream()
 			.collect(Collectors.averagingDouble(Employee::getSalary));
-		
+
 		System.out.println(avg);
 
 		/**
@@ -148,9 +150,9 @@ public class TestStreamAPI3 {
 		 */
 		Long count = emps.stream()
 			.collect(Collectors.counting());
-		
+
 		System.out.println(count);
-		
+
 		System.out.println("--------------------------------------------");
 
 
@@ -159,23 +161,23 @@ public class TestStreamAPI3 {
 		 */
 		DoubleSummaryStatistics dss = emps.stream()
 			.collect(Collectors.summarizingDouble(Employee::getSalary));
-		
+
 		System.out.println(+dss.getMax());
 		System.out.println(+dss.getAverage());
 		System.out.println(+dss.getCount());
 		System.out.println(+dss.getMin());
 		System.out.println(+dss.getSum());
 	}
-	
+
 	//分组(按照员工的状态分组)
 	@Test
 	public void test5(){
 		Map<Status, List<Employee>> map = emps.stream()
 			.collect(Collectors.groupingBy(Employee::getStatus));
-		
+
 		System.out.println(map);
 	}
-	
+
 	//多级分组
 	@Test
 	public void test6(){
@@ -188,27 +190,27 @@ public class TestStreamAPI3 {
 				else
 					return "成年";
 			})));
-		
+
 		System.out.println(map);
 	}
-	
+
 	//分区(片)  true 和 false 两个区
 	//满足条件一个区，不满足条件的一个区
 	@Test
 	public void test7(){
 		Map<Boolean, List<Employee>> map = emps.stream()
 			.collect(Collectors.partitioningBy((e) -> e.getSalary() >= 5000));
-		
+
 		System.out.println(map);
 	}
-	
+
 	//连接字符串
 	@Test
 	public void test8(){
 		String str = emps.stream()
 			.map(Employee::getName)
 			.collect(Collectors.joining("," , "----", "----"));
-		
+
 		System.out.println(str);
 	}
 
@@ -220,7 +222,7 @@ public class TestStreamAPI3 {
 		Optional<Double> sum = emps.stream()
 			.map(Employee::getSalary)
 			.collect(Collectors.reducing(Double::sum));
-		
+
 		System.out.println(sum.get());
 	}
 }

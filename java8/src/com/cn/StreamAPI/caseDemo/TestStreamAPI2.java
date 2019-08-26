@@ -1,10 +1,10 @@
-package com.cn.StreamAPI;
+package com.cn.StreamAPI.caseDemo;
 
-import com.cn.StreamAPI.Employee.Status;
+import com.cn.StreamAPI.caseDemo.entity.Employee;
+import com.cn.StreamAPI.caseDemo.entity.Employee.Status;
 import org.junit.Test;
 
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -22,7 +22,7 @@ import java.util.stream.Stream;
  *
  */
 public class TestStreamAPI2 {
-	
+
 	List<Employee> emps = Arrays.asList(
 			new Employee(102, "李四", 79, 6666.66, Status.BUSY),
 			new Employee(101, "张三", 18, 9999.99, Status.FREE),

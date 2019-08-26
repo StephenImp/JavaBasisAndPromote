@@ -1,4 +1,4 @@
-package com.cn.StreamAPI;
+package com.cn.StreamAPI.caseDemo.entity;
 
 public class Employee {
 
