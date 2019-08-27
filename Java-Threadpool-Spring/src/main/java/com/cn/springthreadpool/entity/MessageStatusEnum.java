@@ -1,7 +1,6 @@
 package com.cn.springthreadpool.entity;
 
 /**
- * @author zhaohq
  * @version 创建时间：2019/2/19
  */
 public enum MessageStatusEnum {

@@ -9,7 +9,6 @@ import org.springframework.web.client.RestTemplate;
 import java.util.concurrent.ScheduledExecutorService;
 
 /**
- * @author zhaohq
  * @version 创建时间：2019/2/27
  */
 @Data
