@@ -1,7 +1,7 @@
 package com.cn.session_6.application_2;
 
 /**
- * 子类调用方法，只调用子类自己的方法
+ * 子类调用重写父类的方法，只运行子类自己的方法
  */
 public class Detergent extends Cleanser {
 
@@ -10,11 +10,11 @@ public class Detergent extends Cleanser {
         append("Detergent.scrub--->");
         //super.scrub();
     }
-    
+
     public void foam(){
         append("foam()");
     }
-    
+
     public static void main(String[] args) {
         Detergent x = new Detergent();
         x.dilute();

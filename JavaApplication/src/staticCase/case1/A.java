@@ -4,6 +4,10 @@ public class A {
 
     public static String a = "test";
 
+    A(){
+        System.out.println("A的构造器");
+    }
+
     static {
         System.out.println("A的静态代码块!!!");
     }

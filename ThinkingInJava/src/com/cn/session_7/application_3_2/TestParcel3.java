@@ -33,6 +33,6 @@ public class TestParcel3 {
         Contents c = p.cont();
         Destination d = p.dest("Tanzania");
         // Illegal -- can't access private class:
-        //! Parcel3.PContents c = p.new PContents();
+        // Parcel3.PContents c = p.new PContents();
     }
 }

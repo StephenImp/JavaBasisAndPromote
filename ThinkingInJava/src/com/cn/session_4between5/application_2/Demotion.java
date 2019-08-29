@@ -3,7 +3,7 @@ package com.cn.session_4between5.application_2;
 /**
  * 大转小(需要强转)
  *
- *如果传入的实际参数大，就要通过类型转换来执行窄化转换，
+ * 如果传入的实际参数大，就要通过类型转换来执行窄化转换，
  * 不这样做，编译器会报错
  */
 public class Demotion {
@@ -33,9 +33,9 @@ public class Demotion {
     void f1(double x) {
         prt("f1(double)");
     }
-    
-    
-    
+
+
+
     void f2(byte x) {
         prt("f2(byte)");
     }
@@ -54,9 +54,9 @@ public class Demotion {
     void f2(double x) {
         prt("f2(double)");
     }
-    
-    
-    
+
+
+
     void f3(short x) {
         prt("f3(short)");
     }
@@ -72,9 +72,9 @@ public class Demotion {
     void f3(double x) {
         prt("f3(double)");
     }
-    
-    
-    
+
+
+
     void f4(int x) {
         prt("f4(int)");
     }
@@ -87,9 +87,9 @@ public class Demotion {
     void f4(double x) {
         prt("f4(double)");
     }
-    
-    
-    
+
+
+
     void f5(long x) {
         prt("f5(long)");
     }
@@ -99,27 +99,27 @@ public class Demotion {
     void f5(double x) {
         prt("f5(double)");
     }
-    
-    
+
+
     void f6(float x) {
         prt("f6(float)");
     }
     void f6(double x) {
         prt("f6(double)");
     }
-    
-    
-    
+
+
+
     void f7(double x) {
         prt("f7(double)");
     }
-    
+
     void testDouble(){
         double x = 0;
         prt("double argument:");
         f1(x);f2((float)x);f3((long)x);f4((int)x);f5((short)x);f6((byte)x);f7((char)x);
     }
-    
+
     public static void main(String[] args) {
         Demotion p  = new Demotion();
         p.testDouble();

@@ -13,11 +13,11 @@ public class RTTI {
         };
         x[0].f();
         x[1].g();
-        
+
+        Userful x1 = x[1];
         //x[1].u();
-        
         ((MoreUserful)x[1]).u();//Downcast/RTTI
-        
+
        // ((MoreUserful)x[0]).u();//Exception thrown
     }
 }

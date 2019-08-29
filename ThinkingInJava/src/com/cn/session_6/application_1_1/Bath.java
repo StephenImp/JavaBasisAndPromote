@@ -21,7 +21,6 @@ public class Bath {
         s3 = "joy";
         toy = 3.14f;
         castille = new Soap();
-
     }
 
     {

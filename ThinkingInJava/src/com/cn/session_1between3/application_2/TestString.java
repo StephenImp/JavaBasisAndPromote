@@ -18,7 +18,8 @@ public class TestString {
 
         a = b;
 
-        a = "C";
+        //a = "C";
+        b = "C";
 
         System.out.println("after--->"+a);
         System.out.println("after--->"+b);

@@ -9,16 +9,23 @@ public class Music {
     /**
      * 接收一个Instrument 句柄
      * 同时也接收从Instrument 衍生出来的所有东西
+     *
+     * 那这里就类似于工厂模式咯
      * @param i
      */
     public static void tune(Instrument i){
         i.play(Note.MIDDLE_C);
     }
-    
+
     public static void main(String[] args) {
-        Wind flute = new Wind();
-        tune(flute);//Upcasting
-        
+        Wind wind = new Wind();
+        tune(wind);//Upcasting
+
+        Brass brass = new Brass();
+        tune(brass);
+
+        Stringed stringed = new Stringed();
+        tune(stringed);
     }
-    
+
 }

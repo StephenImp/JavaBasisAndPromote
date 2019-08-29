@@ -29,6 +29,6 @@ public class Beetle extends Insect{
 
         prt("Beetle constructor");//这一步，并没有初始化构造器。
 
-        //Beetle b = new Beetle();
+        Beetle b = new Beetle();
     }
 }

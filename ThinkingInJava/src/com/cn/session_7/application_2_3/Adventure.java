@@ -25,6 +25,7 @@ public class Adventure {
         System.out.println(CanFly.b);
     }
     static void w(ActionCharacter x) { x.fight(); }
+
     public static void main(String[] args) {
         Hero i = new Hero();
         t(i); // Treat it as a CanFight

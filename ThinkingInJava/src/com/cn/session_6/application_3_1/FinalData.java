@@ -10,8 +10,7 @@ public class FinalData {
      * 所以它们除了能作为编译期的常数使用外，在任何导入方式中也不会出现任何不同。
      * Static 强调它们只有一个；而final 表明它是一个常数。
      *
-     * 注意对于含有固定初始化值（即编译期常数）的fianl static 基本数据类型，
-     * 它们的名字根据规则要全部采用大写。
+     * 注意对于含有固定初始化值（即编译期常数）的fianl static 基本数据类型，它们的名字根据规则要全部采用大写。
      */
     private final int i1 = 9;
     private static final int I2 = 99;
@@ -66,7 +65,7 @@ public class FinalData {
         fd1.print("fd1");
         System.out.println("Creating new FinalData");
         FinalData fd2 = new FinalData();
-        fd1.print("fd1");
+        fd2.print("fd2");
         fd2.print("fd2");
     }
 }

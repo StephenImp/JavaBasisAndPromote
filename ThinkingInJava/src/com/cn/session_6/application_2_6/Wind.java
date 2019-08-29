@@ -1,7 +1,7 @@
 package com.cn.session_6.application_2_6;
 
 /**
- * 
+ *
  ************************************************************
  * @类名 : Wind.java
  *
@@ -13,7 +13,7 @@ package com.cn.session_6.application_2_6;
 public class Wind extends Instrument {
 
     public static void main(String[] args) {
-        Wind flute = new Wind();
-        Instrument.tune(flute);
+        Wind wind = new Wind();
+        Instrument.tune(wind);
     }
 }

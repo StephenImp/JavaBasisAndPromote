@@ -39,8 +39,11 @@ public final class Month2 {
             JUL, AUG, SEP, OCT, NOV, DEC};
 
     public static void main(String[] args) {
+
         Month2 m = Month2.JAN;
         System.out.println(m);
+
+
         m = Month2.month[12];
         System.out.println(m);
         System.out.println(m == Month2.DEC);

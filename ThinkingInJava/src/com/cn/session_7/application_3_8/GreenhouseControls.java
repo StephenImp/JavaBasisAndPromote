@@ -3,8 +3,6 @@ package com.cn.session_7.application_3_8;
 /**
  * Created by admin on 2018/8/2.
  * 为什么要用内部类：控制框架
- *
- *
  */
 public class GreenhouseControls extends Controller {
 

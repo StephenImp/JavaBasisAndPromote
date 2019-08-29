@@ -16,5 +16,7 @@ public class TestRandVals {
         System.out.println(RandVals.rlong);
         System.out.println(RandVals.rfloat);
         System.out.println(RandVals.rdouble);
+
+        System.out.println(RandVals.rint);
     }
 }

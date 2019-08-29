@@ -16,10 +16,10 @@ public class TestParcel2 {
          * 若想在除外部类非static 方法内部之外的任何地方生成内部类的一个对象，
          * 必须将那个对象的类型设为“外部类名.内部类名”，
          */
-
         Parcel2 q = new Parcel2();
         // Defining handles to inner classes:
         Parcel2.Contents c = q.cont();
         Parcel2.Destination d = q.to("Borneo");
+
     }
 }

@@ -19,8 +19,10 @@ public class WindError {
          * 在tune 中，“InstrumentX i ”会发出play()消息，同时将某个NoteX 成员作为自变量使用（MIDDLE_C）。
            由于NoteX 包含了int 定义，重载的play()方法的int 版本会得到调用。
            同时由于它尚未被“覆盖”（重写），所以会使用基础类版本。
+
+         如果子类并没有重写父类的方法，那肯定调用的是父类的啊。
          */
-        WindX flute = new WindX();
-        tune(flute); // Not the desired behavior!
+        WindX windX = new WindX();
+        tune(windX); // Not the desired behavior!
     }
 }

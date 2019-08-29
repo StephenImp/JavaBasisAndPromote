@@ -11,8 +11,8 @@ public class SprinklerSystem {
 
     private String value1, value2, value3, value4;
 
-    WaterSourse sourse = new WaterSourse();
-    //WaterSourse sourse;
+    //WaterSourse sourse = new WaterSourse();
+    WaterSourse sourse;
 
     int i;
     float f;
@@ -25,9 +25,9 @@ public class SprinklerSystem {
         System.out.println("i=" + i);
         System.out.println("f=" + f);
         System.out.println("sourse=" + sourse);
-        
+
     }
-    
+
     public static void main(String[] args) {
         SprinklerSystem x = new SprinklerSystem();
         x.print();

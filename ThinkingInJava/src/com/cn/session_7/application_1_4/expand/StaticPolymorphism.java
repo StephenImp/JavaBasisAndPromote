@@ -13,22 +13,23 @@ public class StaticPolymorphism {
          */
 
         StaticSuper staticSup  = new StaticSub();
-        
+
         System.out.println(staticSup.staticGet());
-        
+
         System.out.println(staticSup.dynamicGet());
 
 
-        System.out.println("**************************************");
+        /**
+         * 子类就会调用自己重写的方法
+         */
+//        System.out.println("**************************************");
+//        Super sup = new Sub();
+//        System.out.println(sup.dynamicGet());
 
-        Super sup = new Sub();
-
-        System.out.println(sup.dynamicGet());
-
-        System.out.println("**************************************");
-
-        Sub sub = new Sub();
-        System.out.println(sub.dynamicGet());
+//        System.out.println("**************************************");
+//
+//        Sub sub = new Sub();
+//        System.out.println(sub.dynamicGet());
 
     }
 }

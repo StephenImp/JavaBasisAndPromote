@@ -17,22 +17,20 @@ package com.cn.session_6.application_3_4;
 public class FinalOverridingIllusion {
 
     public static void main(String[] args) {
-        
+
         OverridingPrivate2 op2 = new OverridingPrivate2();
         op2.f();
         op2.g();
-        
+
         //you can upcast
         OverridingPrivate op = op2;
-        
         //But you can't call the methods
-        
         //op.f();
         //op.g();//即使是向上转型，private方法也不能被句柄调用
-        
+
         WithFinals wf = op2;
         //wf.f();
         //wf.g();
-        
+
     }
 }
