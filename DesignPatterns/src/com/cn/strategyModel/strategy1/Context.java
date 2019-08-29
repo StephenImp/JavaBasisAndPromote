@@ -6,7 +6,6 @@ package com.cn.strategyModel.strategy1;
 public class Context {
 
     Strategy strategy;
-
     /**
      * 初始化时，传入具体的策略对象
      */

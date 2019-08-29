@@ -1,5 +1,7 @@
 package com.cn.proxyModel.myself;
 
+import org.junit.Test;
+
 import java.lang.reflect.Proxy;
 
 /**
@@ -7,8 +9,8 @@ import java.lang.reflect.Proxy;
  */
 public class TestProxy {
 
-    public static void main(String[] args) {
-
+    @Test
+    public void testStudent(){
         //1.创建被代理类的实例对象
         Person zhangSan = new Student();
 
@@ -21,6 +23,14 @@ public class TestProxy {
         stuProxy.giveMoney();
     }
 
+
+    @Test
+    public void testTeacher(){
+        Person lisi = new Teacher();
+        MyInvocationHandler<Person> myInvocationHandler = new MyInvocationHandler<>(lisi);
+        Person teacherProxy = (Person) Proxy.newProxyInstance(Person.class.getClassLoader(), new Class<?>[]{Person.class}, myInvocationHandler);
+        teacherProxy.giveMoney();
+    }
 
 
 }

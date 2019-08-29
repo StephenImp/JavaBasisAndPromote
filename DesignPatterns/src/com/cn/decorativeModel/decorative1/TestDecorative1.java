@@ -18,11 +18,6 @@ public class TestDecorative1 {
 
         System.out.println("*****************************************");
 
-//        ConcreteDecoratorB b = new ConcreteDecoratorB();
-//        b.setComponent(a);
-//        b.Operation();
-
-
         ConcreteDecoratorB b = new ConcreteDecoratorB();
         b.setComponent(c);
         b.Operation();

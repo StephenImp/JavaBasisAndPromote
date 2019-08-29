@@ -6,7 +6,7 @@ package com.cn.singletonModel;
  */
 public class singletonDemo {
 
-/*	//饿汉式
+	//饿汉式
 	private singletonDemo() {
 	}
 
@@ -16,20 +16,19 @@ public class singletonDemo {
 
 		return demo;
 	}
-	*/
 
 
 	//懒汉式
-	private singletonDemo() {
-	}
-
-	private static singletonDemo demo;
-
-	public static singletonDemo getNewinstance() {
-
-		if (demo == null) {
-			demo = new singletonDemo();
-		}
-		return demo;
-	}
+//	private singletonDemo() {
+//	}
+//
+//	private static singletonDemo demo;
+//
+//	public static singletonDemo getNewinstance() {
+//
+//		if (demo == null) {
+//			demo = new singletonDemo();
+//		}
+//		return demo;
+//	}
 }

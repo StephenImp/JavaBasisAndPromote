@@ -1,6 +1,8 @@
 package com.cn.proxyModel;
 
-
+/**
+ * 静态代理模式
+ */
 
 /**
  * 接口

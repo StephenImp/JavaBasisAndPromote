@@ -5,10 +5,8 @@ package com.cn.proxyModel.myself;
  */
 public class Student implements Person{
 
-
     @Override
     public void giveMoney() {
-
         System.out.println("上交50元班费");
     }
 }

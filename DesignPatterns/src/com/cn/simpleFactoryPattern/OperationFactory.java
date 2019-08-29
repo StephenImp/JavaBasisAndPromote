@@ -3,9 +3,7 @@ package com.cn.simpleFactoryPattern;
 public class OperationFactory {
 
     public static Operation createOperation(String opration) {
-
         Operation oper = null;
-
         switch (opration) {
             case "+":
                 oper = new CalculatorAdd();
@@ -20,7 +18,6 @@ public class OperationFactory {
                 oper = new CalculatorDiv();
                 break;
         }
-
         return oper;
     }
 }
