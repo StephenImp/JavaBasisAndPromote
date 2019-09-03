@@ -2,13 +2,6 @@ package com.cn.juc.volatileDemo;
 
 /*
  * 模拟 CAS 算法
- *
- * CAS操作：(CAS 算法是硬件对于并发操作的支持)
-	①获取主存中的值
-	②主存中的值与私有线程中的旧值进行比较
-	③
-		相同---返回新值
-		不同---返回旧值
  */
 public class TestCompareAndSwap {
 
