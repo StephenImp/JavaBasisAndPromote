@@ -2,6 +2,9 @@ package com.cn.juc.volatileDemo;
 
 /*
  * 模拟 CAS 算法
+ *
+ *  主存中的值与私有线程中的旧值进行比较
+ *  相同，更新主存中的值
  */
 public class TestCompareAndSwap {
 
