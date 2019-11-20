@@ -1,0 +1,15 @@
+Thread 捕获异常
+
+
+1.java 1.5版本出现的 UncaughtExceptionHandler ,当线程由于未捕获异常突然终止时调用的处理程序的接口。
+
+当一个线程由于未捕获异常即将终止时，
+Java虚拟机将使用thread . getuncaughtexceptionhandler()查询线程的uncaughtException处理程序，
+并调用处理程序的uncaughtException方法，将线程和异常作为参数传递。
+
+如果一个线程没有显式地设置它的UncaughtExceptionHandler，
+那么它的ThreadGroup对象就充当它的UncaughtExceptionHandler。
+
+如果ThreadGroup对象没有处理异常的特殊要求，它可以将调用转发给默认的未捕获异常处理程序。
+
+ThreadGroup?
