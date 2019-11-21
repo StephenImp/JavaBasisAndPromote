@@ -16,7 +16,5 @@ public class MyRunnable implements Runnable{
         }catch (Exception e){
             throw new RuntimeException("RuntimeException from inside " + taskName);
         }
-
-
     }
 }

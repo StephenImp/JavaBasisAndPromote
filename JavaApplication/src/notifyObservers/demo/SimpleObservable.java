@@ -1,4 +1,4 @@
-package notifyObservers;
+package notifyObservers.demo;
 
 import java.util.Observable;
 

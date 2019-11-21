@@ -1,4 +1,4 @@
-package notifyObservers;
+package notifyObservers.demo;
 
 
 import java.util.Observable;
@@ -26,15 +26,6 @@ public class SimpleObserver implements Observer {
 
         SimpleObservable simpleObservable = (SimpleObservable) observable;
         System.out.println("Data has changed to : " + simpleObservable.getData());
-    }
-
-    public static void main(String[] args){
-        SimpleObservable doc = new SimpleObservable ();
-        SimpleObserver view = new SimpleObserver (doc);
-        doc.setData(1);
-        doc.setData(2);
-        doc.setData(5);
-        doc.setData(3);
     }
 
 }

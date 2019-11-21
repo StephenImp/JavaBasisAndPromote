@@ -4,6 +4,12 @@ import org.junit.Test;
 
 import java.util.Observable;
 
+/**
+ * 直接try{}catch(){}  直接在外面捕获线程是有问题的，因为和子线程不是一个线程
+ *
+ * 但是在各个子线程中捕获线程是没有问题的。
+ *
+ */
 public class TestProblem extends Observable {
 
     @Test
