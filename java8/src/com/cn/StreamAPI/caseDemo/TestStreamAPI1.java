@@ -3,6 +3,7 @@ package com.cn.StreamAPI.caseDemo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import com.cn.StreamAPI.caseDemo.entity.Employee;
@@ -54,24 +55,29 @@ public class TestStreamAPI1 {
 		Stream<String> str = emps.stream()
 			.map((e) -> e.getName());
 
-		System.out.println("-------------------------------------------");
+		//System.out.println("-------------------------------------------");
 
 		List<String> strList = Arrays.asList("aaa", "bbb", "ccc", "ddd", "eee");
 
 		Stream<String> stream = strList.stream()
 			   .map(String::toUpperCase);
 
-		stream.forEach(System.out::println);
-		System.out.println("-------------------------------------------");
+		//stream.forEach(System.out::println);
+		//System.out.println("-------------------------------------------");
 
 		/**
 		 * .map--->  Stream<Stream<Character>> stream2
 		 */
-		Stream<Stream<Character>> stream2 = strList.stream()
-			   .map(TestStreamAPI1::filterCharacter);//{{a,a,a},{b,b,b}....}
+//		Stream<Stream<Character>> stream2 = strList.stream()
+//			   .map(TestStreamAPI1::filterCharacter);//{{a,a,a},{b,b,b}....}
+//
+//		stream2.forEach((sm) -> {
+//			sm.forEach(System.out::print);
+//		});
 
-		stream2.forEach((sm) -> {
-			sm.forEach(System.out::println);
+		List<Stream<Character>> collect = strList.stream().map(TestStreamAPI1::filterCharacter).collect(Collectors.toList());
+		collect.forEach(s-> {
+			System.out.println(s.collect(Collectors.toList()));
 		});
 
 		System.out.println("---------------------------------------------");
@@ -79,10 +85,14 @@ public class TestStreamAPI1 {
 		/**
 		 * .flatMap--->  Stream<Character> stream3
 		 */
-		Stream<Character> stream3 = strList.stream()
-			   .flatMap(TestStreamAPI1::filterCharacter);//{a,a,a,b,b,b }
+//		Stream<Character> stream3 = strList.stream()
+//			   .flatMap(TestStreamAPI1::filterCharacter);//{a,a,a,b,b,b }
+//
+//		stream3.forEach(System.out::print);
 
-		stream3.forEach(System.out::println);
+		List<Character> collect1 = strList.stream().flatMap(TestStreamAPI1::filterCharacter).collect(Collectors.toList());
+		System.out.println(collect1);
+		//collect1.forEach(System.out::println);
 	}
 
 	public static Stream<Character> filterCharacter(String str){
