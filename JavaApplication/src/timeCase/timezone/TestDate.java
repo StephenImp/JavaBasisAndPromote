@@ -1,4 +1,4 @@
-package timezone;
+package timeCase.timezone;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

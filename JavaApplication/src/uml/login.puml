@@ -1,0 +1,35 @@
+@startuml
+participant 前端 as front
+participant 服务端 as client
+participant oaCenter as oaCenter
+participant 缓存 as Cache
+participant 其他服务 as Other
+
+
+group 登陆
+activate front
+activate client
+activate oaCenter
+activate Cache
+activate Other
+
+front -> oaCenter:Authentication Request
+
+oaCenter --> client: Authentication Grant
+client -> oaCenter: Authentication Grant
+oaCenter -> Cache: 存放(key=token+ip,value=token)token
+oaCenter --> client: Access Token
+client --> client : system login create system token
+client --> front: system Token
+front -> client : system Token
+client -> Other: Access Token
+Other --> client: Protected Resource
+client --> front: Protected Resource
+
+deactivate front
+deactivate client
+deactivate oaCenter
+deactivate Cache
+deactivate Other
+end
+@enduml

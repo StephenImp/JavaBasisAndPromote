@@ -1,4 +1,4 @@
-package timezone;
+package timeCase.timezone;
 
 import org.junit.Test;
 
