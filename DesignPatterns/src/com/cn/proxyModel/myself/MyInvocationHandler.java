@@ -32,7 +32,7 @@ public class MyInvocationHandler<T> implements InvocationHandler{
      *
      * 被代理类对象接受入口。
      */
-    MyInvocationHandler(T target){
+    public MyInvocationHandler(T target){
         this.target = target;
     }
 }

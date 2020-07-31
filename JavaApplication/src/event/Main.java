@@ -1,5 +1,9 @@
 package event;
 
+import com.cn.session_6.application_2_1.exercise.C;
+
+import java.util.concurrent.CopyOnWriteArrayList;
+
 /**
  * https://blog.csdn.net/qq369201191/article/details/51204006
  */
@@ -22,7 +26,7 @@ public class Main {
         s.addListener(myListenerTwo);
 
         //事件触发动作
-        //事件的值一改变，那么就会通知这个事件监听器下的所有监听器，这个事件触发了
+        //事件的值一改变，那么就会通知这个事件监听器下的所有监听，这个事件触发了
         s.setValue(100);
     }
 }

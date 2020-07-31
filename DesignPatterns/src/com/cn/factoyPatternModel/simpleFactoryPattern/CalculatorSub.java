@@ -1,7 +1,6 @@
-package com.cn.simpleFactoryPattern;
+package com.cn.factoyPatternModel.simpleFactoryPattern;
 
 public class CalculatorSub extends Operation {
-
     @Override
     public double getResult() {
         double result = 0;

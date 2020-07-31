@@ -1,4 +1,4 @@
-package com.cn.simpleFactoryPattern;
+package com.cn.factoyPatternModel.simpleFactoryPattern;
 
 public class CalculatorDiv extends Operation {
 

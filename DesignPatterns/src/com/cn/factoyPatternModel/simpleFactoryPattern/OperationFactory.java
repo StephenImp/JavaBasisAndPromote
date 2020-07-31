@@ -1,10 +1,10 @@
-package com.cn.simpleFactoryPattern;
+package com.cn.factoyPatternModel.simpleFactoryPattern;
 
 public class OperationFactory {
 
-    public static Operation createOperation(String opration) {
+    public static Operation createOperation(String operation) {
         Operation oper = null;
-        switch (opration) {
+        switch (operation) {
             case "+":
                 oper = new CalculatorAdd();
                 break;
