@@ -1,9 +1,5 @@
 package event;
 
-import com.cn.session_6.application_2_1.exercise.C;
-
-import java.util.concurrent.CopyOnWriteArrayList;
-
 /**
  * https://blog.csdn.net/qq369201191/article/details/51204006
  */
