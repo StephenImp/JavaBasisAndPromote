@@ -11,28 +11,12 @@ public class testCase {
 
     public static void main(String[] args) throws ParseException {
 
-        //通知最后发送时间
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        String format1 = format.format(new Date());
-        String format2 = format.format(new Date());
+        BigDecimal bigDecimal = new BigDecimal(5);
+        BigDecimal bigDecimal2 = new BigDecimal(8);
 
-        System.out.println(format1);
-        System.out.println(format2);
+        int i = bigDecimal.compareTo(bigDecimal2);
 
-        if (format1.equals(format2)){
-            System.out.println("111");
-        }
-
-        Date dd = format.parse(format1);
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(dd);
-        calendar.add(Calendar.DAY_OF_MONTH, 2);
-        String T3 = format.format(calendar.getTime() ) ;
-
-        System.out.println(T3);
+        System.out.println(i);
 
     }
-
-
-
 }
