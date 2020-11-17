@@ -1,1 +1,0 @@
-"Pet", "Dog", "Pug", "Cat","Rodent", "Gerbil", "Hamster",   创建类的顺序。
