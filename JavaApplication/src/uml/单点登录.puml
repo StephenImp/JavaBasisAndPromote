@@ -1,0 +1,22 @@
+@startuml
+participant 浏览器 as front
+participant 服务1 as client1
+participant 服务2 as client2
+participant 认证服务 as ssoServer
+
+
+group 登陆
+activate front
+activate client1
+activate client2
+activate ssoServer
+
+
+
+
+deactivate front
+deactivate client1
+deactivate client2
+deactivate ssoServer
+end
+@enduml
