@@ -1,9 +1,9 @@
-package com.cn.LambdaDemo.demo1.exercise;
+package com.cn.LambdaDemo.case1_baseStrategy.exercise;
 
-import com.cn.LambdaDemo.demo1.Employee;
-import com.cn.LambdaDemo.demo1.FilterEmployeeForAge;
-import com.cn.LambdaDemo.demo1.FilterEmployeeForSalary;
-import com.cn.LambdaDemo.demo1.MyPredicate;
+import com.cn.LambdaDemo.case1_baseStrategy.Employee;
+import com.cn.LambdaDemo.case1_baseStrategy.FilterEmployeeForAge;
+import com.cn.LambdaDemo.case1_baseStrategy.FilterEmployeeForSalary;
+import com.cn.LambdaDemo.case1_baseStrategy.MyPredicate;
 import org.junit.Test;
 
 import java.util.*;

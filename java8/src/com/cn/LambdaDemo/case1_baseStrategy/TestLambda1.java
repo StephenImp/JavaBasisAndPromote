@@ -1,4 +1,4 @@
-package com.cn.LambdaDemo.demo1;
+package com.cn.LambdaDemo.case1_baseStrategy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +8,9 @@ import java.util.TreeSet;
 
 import org.junit.Test;
 
+/**
+ * 由策略模式引申出lambda
+ */
 public class TestLambda1 {
 	
 	//原来的匿名内部类

@@ -1,4 +1,4 @@
-package com.cn.LambdaDemo.demo2;
+package com.cn.LambdaDemo.case2_lambdaGrammar;
 
 @FunctionalInterface
 public interface MyFun {

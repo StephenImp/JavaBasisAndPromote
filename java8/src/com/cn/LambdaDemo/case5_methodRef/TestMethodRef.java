@@ -1,17 +1,17 @@
-package com.cn.LambdaDemo.methodRef;
+package com.cn.LambdaDemo.case5_methodRef;
 
 import java.io.PrintStream;
 import java.util.Comparator;
-import java.util.function.BiFunction;
-import java.util.function.BiPredicate;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
+import java.util.function.*;
 
-import com.cn.LambdaDemo.demo1.Employee;
+import com.cn.LambdaDemo.case1_baseStrategy.Employee;
 import org.junit.Test;
 
 /*
+
+	函数的参数跟箭头左边是一样的话，则可以使用方法引用。***
+
+
  * 一、方法引用：若 Lambda 体中的功能，已经有方法提供了实现，可以使用方法引用
  * 			  （可以将方法引用理解为 Lambda 表达式的另外一种表现形式）
  * 
@@ -52,8 +52,10 @@ public class TestMethodRef {
 		Employee[] emps = fun2.apply(20);
 		System.out.println(emps.length);
 	}
-	
-	//构造器引用
+
+	/**
+	 * 构造器引用
+	 */
 	@Test
 	public void test7(){
 
@@ -62,7 +64,8 @@ public class TestMethodRef {
 		System.out.println(e);
 
 		BiFunction<String, Integer, Employee> fun2 = Employee::new;
-		fun2.apply("cl",18);
+		Employee e1 = fun2.apply("cl", 18);
+		System.out.println(e1);
 	}
 	
 	@Test
@@ -115,6 +118,9 @@ public class TestMethodRef {
 
 	/**
 	 * BiFunction接口
+	 *
+	 * 静态方法的方法引用
+	 *
 	 */
 	@Test
 	public void test3(){
@@ -130,6 +136,9 @@ public class TestMethodRef {
 
 	/**
 	 * Supplier接口
+	 *
+	 * 非静态方法的方法引用
+	 *
 	 */
 	//对象的引用 :: 实例方法名
 	@Test
@@ -143,10 +152,30 @@ public class TestMethodRef {
 		
 		Supplier<String> sup2 = emp::getName;
 		System.out.println(sup2.get());
+
+		System.out.println("----------------------------------");
+
+		UnaryOperator<String> function = emp::getEmpNameDoing;
+		function.apply("在学习");
+
+		System.out.println("----------------------------------");
+
+		//IntUnaryOperator
+
+		System.out.println("----------------------------------");
+		//两个输入一个输出
+		BiFunction<Employee,String,String> function1 =  Employee::getEmpNameDoing;
+		/**
+		 * 普通对象是值传递，基本数据类型才是引用传递。
+		 */
+		//emp = null;
+		function1.apply(emp,"依旧在学习");
 	}
 
 	/**
 	 * Consumer接口
+	 * 函数的参数跟箭头左边是一样的话，则可以使用方法引用。
+	 *
 	 */
 	@Test
 	public void test1(){

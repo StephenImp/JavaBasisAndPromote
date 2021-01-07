@@ -1,4 +1,4 @@
-package com.cn.LambdaDemo.demo1;
+package com.cn.LambdaDemo.case1_baseStrategy;
 
 public class Employee {
 
@@ -101,6 +101,30 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", salary=" + salary + "]";
+	}
+
+
+//	public String getEmpNameDoing(String doing) {
+//
+//		System.out.println(name+doing);
+//
+//		return name+doing;
+//	}
+
+	/**
+	 * JDK默认会把当前实例传入非静态方法，参数名为this，位置是第一个。
+	 * 所以不写也是可以的。去掉 Employee this ，关联代码也不报错，这里为了方便理解。
+	 * 可以查看字节码进行验证
+	 *
+	 *
+	 * @param doing
+	 * @return
+	 */
+	public String getEmpNameDoing(Employee this,String doing) {
+
+		System.out.println(name+doing);
+
+		return name+doing;
 	}
 
 }

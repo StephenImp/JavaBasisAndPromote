@@ -16,9 +16,15 @@ import org.junit.Test;
 /**
  * Stream 终止操作。
  *
+ * 一些统计操作
+ *
+ *
+ *
  *
  */
 public class TestStreamAPI3 {
+
+
 
 	List<Employee> emps = Arrays.asList(
 			new Employee(102, "李四", 79, 6666.66, Status.BUSY),
@@ -29,6 +35,27 @@ public class TestStreamAPI3 {
 			new Employee(104, "赵六", 8, 7777.77, Status.FREE),
 			new Employee(105, "田七", 38, 5555.55, Status.BUSY)
 	);
+
+
+	@Test
+	public void testImooc(){
+
+		//汇总统计
+		DoubleSummaryStatistics sumSalary = emps.stream().collect(Collectors.summarizingDouble(Employee::getSalary));
+		System.out.println(sumSalary);
+
+		//分块统计
+		Map<Boolean, List<Employee>> collect = emps.stream().collect(Collectors.partitioningBy(e -> e.getStatus() == Status.BUSY));
+		System.out.println(collect);
+
+		//得到所有分组的各个人数
+		Map<Status, Long> num = emps.stream().collect(Collectors.groupingBy(Employee::getStatus, Collectors.counting()));
+		System.out.println(num);
+
+
+	}
+
+
 
 	//3. 终止操作
 

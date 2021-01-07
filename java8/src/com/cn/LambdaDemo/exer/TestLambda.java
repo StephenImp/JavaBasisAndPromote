@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import com.cn.LambdaDemo.demo1.Employee;
+import com.cn.LambdaDemo.case1_baseStrategy.Employee;
 import org.junit.Test;
 
 

@@ -31,6 +31,38 @@ import org.junit.Test;
  */
 public class TestStreamAPI1 {
 
+	@Test
+	public void testImmoc(){
+
+		String str = "my name is 007";
+
+		//map
+		//不是把String转换成Int,而是得到String的属性，这个属性是int类型
+		Stream.of(str.split(" ")).map(s->s.length()).filter(l->l>2).forEach(System.out::println);
+
+		System.out.println("----------------------------------------");
+
+		//flatMap A->B属性(是个集合)；最终得到所有A元素里面的所有B属性集合
+		//intStream/longStream 并不是Stream的子类，所以要进行装箱 boxed
+		Stream.of(str.split(" ")).flatMap(s -> s.chars().boxed()).forEach(System.out::println);
+		//Stream.of(str.split(" ")).flatMap(s -> s.chars().boxed()).forEach(i->System.out.println((char)i.intValue()));
+
+
+		System.out.println("----------------------------------------");
+		//peek 用于debug  ,是个中间操作， 和forEach很像，但是forEach 是终止操作
+		Stream.of(str.split(" ")).peek(System.out::println).forEach(System.out::println);
+
+	}
+
+
+
+
+
+
+
+
+
+
 	List<Employee> emps = Arrays.asList(
 			new Employee(102, "李四", 59, 6666.66),
 			new Employee(101, "张三", 18, 9999.99),

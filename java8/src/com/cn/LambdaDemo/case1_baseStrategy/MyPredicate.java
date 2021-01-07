@@ -1,4 +1,4 @@
-package com.cn.LambdaDemo.demo1;
+package com.cn.LambdaDemo.case1_baseStrategy;
 
 /**
  * 函数式接口

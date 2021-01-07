@@ -1,12 +1,9 @@
-package com.cn.LambdaDemo.demo3;
+package com.cn.LambdaDemo.case3_Interface;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 import org.junit.Test;
 
@@ -24,7 +21,17 @@ import org.junit.Test;
  * 
  * Predicate<T> : 断言型接口
  * 		boolean test(T t);
- * 
+ *
+ * UnaryOperator<T>:	一元函数(输入输出相同)   这个接口继承于 Function<T, R>
+ *
+ *    <T> UnaryOperator<T> identity()
+ *
+ *
+ * BiFunction<T, U, R>: 两个输入一个输出
+ * 		R apply(T t, U u);
+ *
+ *
+ * BinaryOperator<T> extends BiFunction<T,T,T>	 二元函数，输入输出类型相同
  */
 
 /**

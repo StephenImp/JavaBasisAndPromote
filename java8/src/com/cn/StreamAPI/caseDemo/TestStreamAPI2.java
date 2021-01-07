@@ -23,6 +23,35 @@ import java.util.stream.Stream;
  */
 public class TestStreamAPI2 {
 
+	@Test
+	public void testImooc(){
+
+		String str = "my name is 007";
+
+		//使用并行流，打印出来是乱序的
+		str.chars().parallel().forEach(i->System.out.print((char)(i)));
+
+		System.out.println();
+		//保证不乱序
+		str.chars().parallel().forEachOrdered(i->System.out.print((char)(i)));
+
+		System.out.println("-----------");
+
+		//reduce
+		Optional<String> reduce = Stream.of(str.split(" ")).reduce((s1, s2) -> s1 + "|" + s2);
+		System.out.println(reduce.orElse(""));
+
+		//带初始值的reduce
+		String reduce1 = Stream.of(str.split(" ")).reduce("", (s1, s2) -> s1 + "|" + s2);
+		System.out.println(reduce1);
+
+		//计算字符串总长度
+		Integer reduce2 = Stream.of(str.split(" ")).map(s -> s.length()).reduce(0, (l1, l2) -> l1 + l2);
+		System.out.println(reduce2);
+
+	}
+
+
 	List<Employee> emps = Arrays.asList(
 			new Employee(102, "李四", 79, 6666.66, Status.BUSY),
 			new Employee(101, "张三", 18, 9999.99, Status.FREE),
