@@ -1,5 +1,8 @@
-package atguigu.dataStructure.sparsearray;
+package atguigu.dataStructure.case1_sparsearray;
 
+/**
+ * 稀疏数组  对应稀疏数组 例子看
+ */
 public class SparseArray {
 
     public static void main(String[] args) {
@@ -8,7 +11,8 @@ public class SparseArray {
         int chessArr1[][] = new int[11][11];
         chessArr1[1][2] = 1;
         chessArr1[2][3] = 2;
-        chessArr1[4][5] = 2;
+        //chessArr1[1][3] = 2;
+
         // 输出原始的二维数组
         System.out.println("原始的二维数组~~");
         for (int[] row : chessArr1) {
@@ -31,20 +35,27 @@ public class SparseArray {
 
         // 2. 创建对应的稀疏数组
         int sparseArr[][] = new int[sum + 1][3];
+
+        System.out.println();
+        System.out.println("sum:"+sum);
+        System.out.println("sparseArr.length:"+sparseArr.length);//获取行数
+        // sparseArr[0].length;//获取列数
+
+
         // 给稀疏数组赋值
         sparseArr[0][0] = 11;
         sparseArr[0][1] = 11;
         sparseArr[0][2] = sum;
 
         // 遍历二维数组，将非0的值存放到 sparseArr中
-        int count = 0; //count 用于记录是第几个非0数据
-        for (int i = 0; i < 11; i++) {
-            for (int j = 0; j < 11; j++) {
+        int count = 0; //count 用于记录是第几个非0数据  同时代表稀疏数组的有效值的行数
+        for (int i = 0; i < 11; i++) { // 遍历每一行
+            for (int j = 0; j < 11; j++) { // 遍历每一行中的每一列
                 if (chessArr1[i][j] != 0) {
                     count++;
-                    sparseArr[count][0] = i;
-                    sparseArr[count][1] = j;
-                    sparseArr[count][2] = chessArr1[i][j];
+                    sparseArr[count][0] = i;//行
+                    sparseArr[count][1] = j;//列
+                    sparseArr[count][2] = chessArr1[i][j];//值
                 }
             }
         }
@@ -69,6 +80,7 @@ public class SparseArray {
 
         //2. 在读取稀疏数组后几行的数据(从第二行开始)，并赋给 原始的二维数组 即可
 
+        // i =1 :因为sparseArr 第一行是记录着 完整的二维数组的信息，所以从第二行开始录入数据，所以i=1
         for(int i = 1; i < sparseArr.length; i++) {
             chessArr2[sparseArr[i][0]][sparseArr[i][1]] = sparseArr[i][2];
         }
@@ -79,8 +91,10 @@ public class SparseArray {
 
         for (int[] row : chessArr2) {
             for (int data : row) {
-                System.out.printf("%d\t", data);
+                System.out.printf("%d\t", data); // 每一列，打印值，空格
             }
+
+            //每一行进行换行
             System.out.println();
         }
     }
