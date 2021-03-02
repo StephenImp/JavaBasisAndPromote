@@ -1,4 +1,4 @@
-package case1_sparsearray.practice;
+package atguigu.dataStructure.day1_sparsearray.practice;
 
 /**
  * SparseArrayPractice

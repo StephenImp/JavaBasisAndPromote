@@ -1,7 +1,11 @@
-package atguigu.dataStructure.queue;
+package atguigu.dataStructure.day2_queue;
 
 import java.util.Scanner;
 
+/**
+ * 2021-03-02
+ * 数组模拟队列
+ */
 public class ArrayQueueDemo {
 
     public static void main(String[] args) {
