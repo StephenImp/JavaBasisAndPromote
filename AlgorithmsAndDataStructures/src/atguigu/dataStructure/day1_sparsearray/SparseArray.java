@@ -1,6 +1,7 @@
-package case1_sparsearray;
+package atguigu.dataStructure.day1_sparsearray;
 
 /**
+ * 2021-03-02
  * 稀疏数组  对应稀疏数组 例子
  */
 public class SparseArray {

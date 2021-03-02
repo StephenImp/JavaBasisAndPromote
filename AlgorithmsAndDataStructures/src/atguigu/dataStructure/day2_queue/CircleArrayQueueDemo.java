@@ -68,6 +68,7 @@ public class CircleArrayQueueDemo {
 
 
 class CircleArray {
+
     private int maxSize; // 表示数组的最大容量
     //front 变量的含义做一个调整： front 就指向队列的第一个元素, 也就是说 arr[front] 就是队列的第一个元素
     //front 的初始值 = 0
