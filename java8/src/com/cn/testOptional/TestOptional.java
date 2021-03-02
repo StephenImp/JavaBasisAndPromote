@@ -127,4 +127,9 @@ public class TestOptional {
 		System.out.println(emp);
 	}
 
+	public static void main(String[] args) {
+		Optional<Employee> op = Optional.empty();
+		System.out.println(op.get());
+	}
+
 }
