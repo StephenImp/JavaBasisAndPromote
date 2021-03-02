@@ -113,6 +113,7 @@ class CircleArray {
             // 通过抛出异常
             throw new RuntimeException("队列空，不能取数据");
         }
+
         // 这里需要分析出 front是指向队列的第一个元素
         // 1. 先把 front 对应的值保留到一个临时变量
         // 2. 将 front 后移, 考虑取模
