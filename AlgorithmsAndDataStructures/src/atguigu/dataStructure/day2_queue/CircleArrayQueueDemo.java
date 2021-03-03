@@ -1,10 +1,11 @@
-package atguigu.dataStructure.day2_queue;
+package day2_queue;
 
 import java.util.Scanner;
 
 /**
  * 2021-03-02
  * 环形数组实现队列
+ * @author Steph
  */
 public class CircleArrayQueueDemo {
 
@@ -40,7 +41,6 @@ public class CircleArrayQueueDemo {
                         int res = queue.getQueue();
                         System.out.printf("取出的数据是%d\n", res);
                     } catch (Exception e) {
-                        // TODO: handle exception
                         System.out.println(e.getMessage());
                     }
                     break;
@@ -49,7 +49,6 @@ public class CircleArrayQueueDemo {
                         int res = queue.headQueue();
                         System.out.printf("队列头的数据是%d\n", res);
                     } catch (Exception e) {
-                        // TODO: handle exception
                         System.out.println(e.getMessage());
                     }
                     break;
@@ -85,11 +84,17 @@ class CircleArray {
 
     // 判断队列是否满
     public boolean isFull() {
+        System.out.println("isFull  rear:"+rear);
+        System.out.println("isFull  front:"+front);
+        System.out.println("isFull  maxSize:"+maxSize);
+
         return (rear  + 1) % maxSize == front;
     }
 
     // 判断队列是否为空
     public boolean isEmpty() {
+        System.out.println("isEmpty  rear:"+rear);
+        System.out.println("isEmpty  front:"+front);
         return rear == front;
     }
 
@@ -104,6 +109,10 @@ class CircleArray {
         arr[rear] = n;
         //将 rear 后移, 这里必须考虑取模
         rear = (rear + 1) % maxSize;
+
+        System.out.println("addQueue  rear:"+rear);
+        System.out.println("addQueue  front:"+front);
+
     }
 
     // 获取队列的数据, 出队列
@@ -120,6 +129,10 @@ class CircleArray {
         // 3. 将临时保存的变量返回
         int value = arr[front];
         front = (front + 1) % maxSize;
+
+        System.out.println("getQueue  rear:"+rear);
+        System.out.println("getQueue  front:"+front);
+
         return value;
 
     }
