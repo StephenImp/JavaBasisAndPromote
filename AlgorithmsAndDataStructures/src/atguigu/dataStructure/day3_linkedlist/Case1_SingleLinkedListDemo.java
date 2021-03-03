@@ -1,8 +1,11 @@
-package atguigu.dataStructure.linkedlist;
+package atguigu.dataStructure.day3_linkedlist;
 
 import java.util.Stack;
 
-public class SingleLinkedListDemo {
+/**
+ * 2021-03-03
+ */
+public class Case1_SingleLinkedListDemo {
 
     public static void main(String[] args) {
         //进行测试
@@ -293,7 +296,7 @@ class SingleLinkedList {
         //因为头节点，不能动，因此我们需要一个辅助变量来遍历
         HeroNode temp = head.next;
         while(true) {
-            //判断是否到链表最后
+            //判断是否到链表最后  把if判断放在下面会怎么样？todo
             if(temp == null) {
                 break;
             }

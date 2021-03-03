@@ -1,4 +1,4 @@
-package atguigu.dataStructure.linkedlist;
+package atguigu.dataStructure.day3_linkedlist;
 
 import java.util.Stack;
 
